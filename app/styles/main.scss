@@ -1,0 +1,182 @@
+// bower:scss
+// endbower
+
+// color vars
+
+$lightgray: rgba(220,220,220, 1);
+$verylightgray: #fafafa;
+$spacing-unit: 15px;
+$button-size: 50px;
+$bgcolor: rgba(220,220,220, 1);
+$bgcolor-alt: #ededed;
+$container-width-basic: $button-size * 4 + 40px;
+$container-width-sci: $container-width-basic * 2;
+$transition-time: 0.6s;
+$transition: all ease-in-out 0.5s;
+$transition-width: width ease-in-out 0.5s;
+$transition-button: all ease-in 1s;
+$transition-pop-out: all linear 1s;
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+.hidden {
+  display:none;
+}
+
+.invisible {
+  visibility:hidden;
+  background-color: darken($bgcolor-alt, 2);
+  border-bottom:3px solid darken($bgcolor-alt, 2);
+  border-right:2px solid darken($bgcolor-alt, 2);
+  @include transition($transition-pop-out);
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #fafafa;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #555;
+}
+
+h1 {
+  width:100%;
+  text-align:center;
+}
+.container {
+  width:$container-width-sci;
+  @include transition($transition-width);
+  margin:0 auto;
+}
+.basic-width {
+  width:$container-width-basic;
+
+}
+
+.calculator {
+  width: 100%; 
+  margin:0 auto;
+  background-color:$bgcolor;
+  padding:$spacing-unit;
+  border-radius:$spacing-unit;
+  border-top-right-radius: 0;
+  box-shadow: inset 0px -1px 0px 1px rgba(187,187,187,1);
+}
+
+.basic-width {
+  width:$container-width-basic;
+}
+
+.tabs {
+  float:right;
+  padding:0;
+  list-style-type: none;
+  margin:0;
+}
+.tab {
+  display:inline-block;
+   padding:$spacing-unit / 2 $spacing-unit * 2;
+   text-align:right;
+   background-color:$bgcolor;
+    box-shadow: inset -1px 1px 0px 0px #bbbbbb;
+   text-shadow: $verylightgray 1px 1px 0px;
+   transition:$transition-time;  
+}
+
+.inactive {
+  background-color:$bgcolor-alt;
+  box-shadow: none;
+}
+
+
+.tabs div {
+  // display:inline;
+  padding:$spacing-unit;
+  background-color:black;
+
+}
+
+.basic {
+  width:$button-size * 4 + 14px;
+  float:right;
+}
+
+.calcNumbers {
+  float:left;
+  width:100%;
+}
+.basicOperators {
+  float:right;
+  width:$button-size;
+  // padding-top:$button-size + 4px;
+}
+
+#visor {
+  text-align:right;
+  padding:15px;
+  width:100%;
+  background-color: $verylightgray;
+  border:1px solid $bgcolor;
+  border-radius:$spacing-unit / 2;
+  margin-bottom: $spacing-unit;
+}
+
+.scientific {
+  float:left;
+  // border:1px solid blue;
+}
+
+button {
+  opacity:1;
+  width:$button-size;
+  height:$button-size;
+  background-color:$bgcolor-alt;
+  border-radius:5px;
+  // border-color: $bgcolor-alt;
+  border:0;
+  border-bottom: 3px solid rgba(0,0,0, 0.2);
+  border-right:2px solid rgba(0,0,0,0.2);
+  margin-top:2px;
+  margin-bottom:2px;
+  text-shadow: $verylightgray 1px 1px 0px;
+  // @include transition($transition-pop-out);
+  opacity:1;
+}
+
+button.equals {
+  width: $button-size * 2 + 4px;
+}
+button:focus, button:active {
+  outline:0;
+}
+
+button:active {
+  background-color: darken($bgcolor-alt, 2);
+  border-bottom:3px solid darken($bgcolor-alt, 2);
+  border-right:2px solid darken($bgcolor-alt, 2);
+  // @include transition($transition-button);
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}

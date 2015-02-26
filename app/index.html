@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>jscalculator</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+   <h1>JS Calculator</h1>
+    <div class="container basic-width clearfix">
+      <div class="clearfix">
+        <ul class="tabs clearfix">
+          <li class="tab sci inactive"> Scientific </li>
+          <li class="tab bs"> Basic </li>
+        </ul>
+      </div>
+      <div class="calculator clearfix"> 
+        <div id="visor">0</div>
+      <div class="scientific hidden">
+         <button class="single-operator invisible inactive" data-operator="1/x">1/x</button>
+         <button class="single-operator invisible inactive" data-operator="x^2">x&#178;</button>
+         <button class="single-operator invisible inactive" data-operator="x^3">x&#179;</button>
+         <button class="operator invisible inactive" data-operator="y^x">y^x</button>
+         <br/>
+         <button class="single-operator invisible inactive" data-operator="x!">x!</button>
+         <button class="single-operator invisible inactive" data-operator="squareroot">&#8730;</button>
+         <button class="single-operator invisible inactive" data-operator="log2">log&#8322;</button>
+         <button class="single-operator invisible inactive" data-operator="log10">log&#8321;&#8320;</button>
+         <br/>
+         <button class="single-operator invisible" data-operator="sin">sin</button>
+         <button class="single-operator invisible" data-operator="cos">cos</button>
+         <button class="single-operator invisible" data-operator="tan">tan</button>
+         <button class="single-operator invisible" data-operator="ln">ln</button>
+         <br/>
+         <button class="single-operator invisible" data-operator="sinh">sinh</button>
+         <button class="single-operator invisible" data-operator="cosh">cosh</button>
+         <button class="single-operator invisible" data-operator="tanh">tanh</button>
+         <button class="degrad invisible" data-operator="toggle-deg-rad">Rad</button>
+          <br/>
+          <button class="constants invisible" data-number="pi">&#960;</button>
+          <button class="constants invisible" data-number="E">E</button>
+          <button class="constants invisible" data-number="rand">rand</button>
+      </div>
+      <div class="basic">
+      <div class="calcNumbers">
+        <button class="reset" id="reset"> C </button>
+        <button class="single-operator" data-operator="+-">+-</button>
+        <button class="single-operator" data-operator="%">%</button>
+        <button class="operator" id="add" data-operator="+">+</button><br/>
+        <button class="numbers" data-number='7' id="7">7</button>
+        <button class="numbers" data-number='8' id="8">8</button>
+        <button class="numbers" data-number='9' id="9">9</button>
+        <button class="operator" id="subtract" data-operator="-">-</button><br/>
+        <button class="numbers" data-number='4' id="4">4</button>
+        <button class="numbers" data-number='5' id="5">5</button>
+        <button class="numbers" data-number='6' id="6">6</button>
+        <button class="operator" id="multiply"data-operator="*">*</button><br/>
+        <button class="numbers" data-number='1' id="1">1</button>
+        <button class="numbers" data-number='2' id="2">2</button>
+        <button class="numbers" data-number='3' id="3">3</button>
+        <button class="operator" id="divide" data-operator="/">/</button><br/>
+        <button class="numbers" data-number='0' id="0">0</button>
+        <button class="float" id="float">.</button>
+        <button class="equals" id="equal">=</button>
+        </div>
+    </div>
+
+
+
+
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
